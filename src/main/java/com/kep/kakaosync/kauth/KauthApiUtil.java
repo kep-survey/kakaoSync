@@ -8,6 +8,8 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
@@ -18,8 +20,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import lombok.Setter;
-
+@Component
 public class KauthApiUtil {
 	private static final String GRANT_TYPE = "authorization_code";
 	private static final String CLIENT_ID = "95a29b52a930a2a11df6c8090bd8df85";
@@ -27,13 +28,6 @@ public class KauthApiUtil {
 	
 	private static final String OAUTH_TOKEN_API = "https://kauth.kakao.com/oauth/token";
 	private static final String USER_ME_API = "https://kapi.kakao.com/v2/user/me";
-	
-	private static RestTemplate restTemplate;
-
-    @Autowired
-    public KauthApiUtil(RestTemplate restTemplate) {
-        this.restTemplate=restTemplate;
-    }
     
     public JsonObject oauthUser(String code) {
 		HttpHeaders headers = new HttpHeaders();
@@ -46,7 +40,8 @@ public class KauthApiUtil {
 		params.add("code", code);
 		
 		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(params, headers);
-
+		
+		RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory());
     	String resp =  restTemplate.postForEntity(USER_ME_API, request, String.class).getBody();
     	
     	// string json으로 파싱
@@ -64,6 +59,7 @@ public class KauthApiUtil {
         // 엔티티에 헤더 담기
         HttpEntity<String> httpEntity = new HttpEntity<String>(headers);
         
+        RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory());
         String resp = restTemplate.exchange(USER_ME_API, HttpMethod.GET, httpEntity, String.class).getBody();
         
         // string json으로 파싱

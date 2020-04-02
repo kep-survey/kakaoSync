@@ -6,11 +6,13 @@ import org.springframework.stereotype.Service;
 import com.google.gson.JsonObject;
 import com.kep.kakaosync.kauth.KauthApiUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
 public class KakaoSyncService {
+	@Autowired 
+	KauthApiUtil kauthApiUtil;
 	
-	@Autowired KauthApiUtil kauthApiUtil;
-
 	public String saveUser(String code, String payerNumber) {
 		JsonObject res = new JsonObject();
 		

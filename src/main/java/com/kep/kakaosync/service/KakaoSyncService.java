@@ -18,6 +18,7 @@ public class KakaoSyncService {
 		
 		try {
 			JsonObject oauthUser = kauthApiUtil.oauthUser(code);
+			System.out.println(oauthUser.toString());
 			
 			String accessToken = oauthUser.get("access_token").toString();
 			

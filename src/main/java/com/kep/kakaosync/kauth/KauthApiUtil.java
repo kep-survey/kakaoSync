@@ -24,7 +24,7 @@ import com.google.gson.JsonParser;
 public class KauthApiUtil {
 	private static final String GRANT_TYPE = "authorization_code";
 	private static final String CLIENT_ID = "95a29b52a930a2a11df6c8090bd8df85";
-	private static final String REDIRECT_URI = "";
+	private static final String REDIRECT_URI = "http://localhost:8080/additionalInfo";
 	
 	private static final String OAUTH_TOKEN_API = "https://kauth.kakao.com/oauth/token";
 	private static final String USER_ME_API = "https://kapi.kakao.com/v2/user/me";
@@ -42,7 +42,7 @@ public class KauthApiUtil {
 		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(params, headers);
 		
 		RestTemplate restTemplate = new RestTemplate(new HttpComponentsClientHttpRequestFactory());
-    	String resp =  restTemplate.postForEntity(USER_ME_API, request, String.class).getBody();
+    	String resp =  restTemplate.postForEntity(OAUTH_TOKEN_API, request, String.class).getBody();
     	
     	// string json으로 파싱
         JsonParser parser = new JsonParser();

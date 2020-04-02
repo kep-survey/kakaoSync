@@ -22,8 +22,7 @@ public class KakaoSyncService {
 			
 			String accessToken = oauthUser.get("access_token").toString();
 			
-			System.out.println(kauthApiUtil.getUser(accessToken).toString());
-			
+			res.addProperty("accessToken", accessToken);
 			res.addProperty("result", true);
 		} catch (Exception e ) {
 			e.printStackTrace();

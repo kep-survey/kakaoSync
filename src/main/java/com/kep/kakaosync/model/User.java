@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,33 +15,18 @@ import lombok.NoArgsConstructor;
 @Table(name="user")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column
-	private String nickname;
+	private String payerNumber;
 	
 	@Column
-	private String profileImage;
+	private String acessToken;
 	
 	@Column
-	private String thumbnailImage;
-	
-	@Column
-	private String profile;
-	
-	@Column
-	private String email;
-	
-	@Column
-	private String ageRange;
-	
-	@Column
-	private String birthday;
-	
-	@Column
-	private String gender;
+	private String refreshToken;
 	
 }

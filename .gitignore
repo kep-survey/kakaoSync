@@ -4,3 +4,6 @@
 #etc
 .DS_Store
 ./web/.DS_Store
+.classpath
+.factorypath
+.settings

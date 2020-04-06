@@ -1,6 +1,9 @@
 #node_modules
 ./web/node_modules
 
+#build
+.target
+
 #etc
 .DS_Store
 ./web/.DS_Store

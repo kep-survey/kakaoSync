@@ -19,7 +19,7 @@ public class KauthApiUtil {
 	private static final String AUTH_GRANT_TYPE = "authorization_code";
 	private static final String REFRESH_GRANT_TYPE = "refresh_token";
 	private static final String CLIENT_ID = "d0fc0dee9fc59f4c32df40333a67aa19";
-	private static final String REDIRECT_URI = "http://localhost:8080/additionalInfo";
+	//private static final String REDIRECT_URI = "http://localhost:8080/additionalInfo";
 	
 	private static final String OAUTH_TOKEN_API = "https://kauth.kakao.com/oauth/token";
 	private static final String USER_ME_API = "https://kapi.kakao.com/v2/user/me";
@@ -34,7 +34,7 @@ public class KauthApiUtil {
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", AUTH_GRANT_TYPE);
 		params.add("client_id", CLIENT_ID);
-		params.add("redirect_uri", REDIRECT_URI);
+		//params.add("redirect_uri", REDIRECT_URI);
 		params.add("code", code);
 		
 		// http entity 선언

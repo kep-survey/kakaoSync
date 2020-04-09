@@ -25,7 +25,7 @@ export default {
                 'Content-Type': 'application/json'
             }
 
-            axios.post('http://vere.es.onkakao.net/api/saveUser', param, header)
+            axios.post('http://localhost/api/saveUser', param, header)
             .then(res => {
                 Kakao.Auth.setAccessToken(res.data.accessToken);
                 sessionStorage.setItem("isLogged", "true");

@@ -18,7 +18,7 @@ import com.google.gson.JsonParser;
 public class KauthApiUtil {
 	private static final String AUTH_GRANT_TYPE = "authorization_code";
 	private static final String REFRESH_GRANT_TYPE = "refresh_token";
-	private static final String CLIENT_ID = "d0fc0dee9fc59f4c32df40333a67aa19";
+	private static final String CLIENT_ID = "{{REST API KEY}}";
 	//private static final String REDIRECT_URI = "http://localhost:8080/additionalInfo";
 	
 	private static final String OAUTH_TOKEN_API = "https://kauth.kakao.com/oauth/token";

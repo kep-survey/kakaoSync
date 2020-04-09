@@ -33,7 +33,7 @@
 		methods: {
             onClickKakaoLogin: () => {
                 Kakao.Auth.authorize({
-                    redirectUri: "http://vere.es.onkakao.net/additionalInfo"
+                    redirectUri: "http://localhost/additionalInfo"
                 });
             }
         }

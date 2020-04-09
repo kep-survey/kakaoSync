@@ -1,6 +1,7 @@
 package com.kep.kakaosync.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonObject;
 import com.kep.kakaosync.service.KakaoSyncService;
 
-import lombok.extern.slf4j.Slf4j;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/*")
 public class KakaoSyncController {

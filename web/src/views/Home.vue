@@ -22,7 +22,7 @@ export default {
 
         if (isKakaoBrowser > -1 && sessionStorage.getItem("isLogged") !== "true") {
             Kakao.Auth.authorize({
-                redirectUri: "http://vere.es.onkakao.net/blank",
+                redirectUri: "http://localhost/blank",
                 autoLogin: true
             }); 
         }

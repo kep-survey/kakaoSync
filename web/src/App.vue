@@ -117,7 +117,8 @@
     },
     created() {
       if(!Kakao.isInitialized()) {
-        Kakao.init("6efa5f6dd16496028becc2e565b48a77");
+        // 카카오 디벨로퍼스에서 앱 생성 후 {{REST API KEY}} 부분을 발급받으신 JavaScript KEY로 대체하시면 됩니다.
+        Kakao.init("{{JavaScript KEY}}");
       }
 
       if (sessionStorage.getItem('isLogged') === "true") {

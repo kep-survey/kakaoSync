@@ -18,6 +18,8 @@ import com.google.gson.JsonParser;
 public class KauthApiUtil {
 	private static final String AUTH_GRANT_TYPE = "authorization_code";
 	private static final String REFRESH_GRANT_TYPE = "refresh_token";
+	
+	// 카카오 디벨로퍼스에서 앱 생성 후 {{REST API KEY}} 부분을 발급받으신 REST API KEY로 대체하시면 됩니다.
 	private static final String CLIENT_ID = "{{REST API KEY}}";
 	//private static final String REDIRECT_URI = "http://localhost:8080/additionalInfo";
 	
